@@ -1,0 +1,57 @@
+#
+//  ios-build.yml
+//  TaskFlow
+//
+//  Created by vsmart on 04/08/26.
+//
+
+name: iOS CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    name: Build iOS Project
+
+    runs-on: macos-15
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: List Project
+        run: ls -la
+
+      - name: List Schemes
+        run: xcodebuild -list -project TaskFlow.xcodeproj
+
+      - name: Resolve Swift Packages
+        run: |
+          xcodebuild \
+            -resolvePackageDependencies \
+            -project TaskFlow.xcodeproj
+
+      - name: Build App
+        run: |
+          xcodebuild \
+            -project TaskFlow.xcodeproj \
+            -scheme TaskFlow \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            clean build
