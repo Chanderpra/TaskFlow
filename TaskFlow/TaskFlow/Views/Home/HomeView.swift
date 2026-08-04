@@ -72,6 +72,8 @@ struct HomeView: View {
             .refreshable {
 
                 print("Refresh")
+                
+                
 //                try? await Task.sleep(for: .seconds(1))
 
             }
