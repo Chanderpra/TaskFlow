@@ -11,35 +11,26 @@ on:
 
 jobs:
   build:
-
     name: Build TaskFlow
 
     runs-on: macos-15
 
-    defaults:
-      run:
-        working-directory: TaskFlow
-
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Select Latest Stable Xcode
+      - name: Select Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
 
-      - name: Xcode Version
+      - name: Show Xcode Version
         run: xcodebuild -version
 
-      - name: Show Project Files
-        run: ls -la
-
-      - name: Show Schemes
+      - name: List Schemes
         run: xcodebuild -list -project TaskFlow.xcodeproj
 
-      - name: Resolve Swift Packages
+      - name: Resolve Packages
         run: |
           xcodebuild \
             -resolvePackageDependencies \
