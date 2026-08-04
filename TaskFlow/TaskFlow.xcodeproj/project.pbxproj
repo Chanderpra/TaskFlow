@@ -45,6 +45,11 @@
 			path = TaskFlowUITests;
 			sourceTree = "<group>";
 		};
+		503E43333021FB5200D50B51 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 		501C23AD3020C490006F0951 = {
 			isa = PBXGroup;
 			children = (
+				503E43333021FB5200D50B51 /* .github */,
 				501C23B83020C490006F0951 /* TaskFlow */,
 				501C23C83020C492006F0951 /* TaskFlowTests */,
 				501C23D23020C492006F0951 /* TaskFlowUITests */,
@@ -109,6 +115,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				501C23B83020C490006F0951 /* TaskFlow */,
+				503E43333021FB5200D50B51 /* .github */,
 			);
 			name = TaskFlow;
 			packageProductDependencies = (
