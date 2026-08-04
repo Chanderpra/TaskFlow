@@ -44,4 +44,4 @@ jobs:
             clean build \
             -project TaskFlow.xcodeproj \
             -scheme TaskFlow \
-            -destination "platform=iOS Simulator,name=iPhone 17"
+            -destination "generic/platform=iOS Simulator"
