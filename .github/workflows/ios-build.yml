@@ -36,6 +36,9 @@ jobs:
             -resolvePackageDependencies \
             -project TaskFlow.xcodeproj
 
+    - name: List Simulators
+    run: xcrun simctl list devices
+  
       - name: Build
         run: |
           xcodebuild \
