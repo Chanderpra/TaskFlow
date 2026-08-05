@@ -52,4 +52,4 @@ jobs:
             test \
             -project TaskFlow.xcodeproj \
             -scheme TaskFlow \
-            -destination "generic/platform=iOS Simulator"
+            -destination "platform=iOS Simulator,name=iPhone 17"
