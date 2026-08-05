@@ -11,14 +11,24 @@ on:
 
 jobs:
   build:
+    name: Build TaskFlow
+
     runs-on: macos-15
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: maxim-lobanov/setup-xcode@v1
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: Install Gems
+        run: bundle install
 
       - name: Install SwiftLint
         run: brew install swiftlint
@@ -26,14 +36,17 @@ jobs:
       - name: Run SwiftLint
         run: swiftlint
 
-      - name: Resolve Packages
+      - name: Resolve Swift Packages
         run: |
           xcodebuild \
             -resolvePackageDependencies \
             -project TaskFlow.xcodeproj
 
-      - name: Install Gems
-        run: bundle install
+      - name: Fastlane Beta Build
+        run: bundle exec fastlane beta
 
-      - name: Fastlane Build
-        run: bundle exec fastlane ci
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: TaskFlow-IPA
+          path: TaskFlow.ipa
