@@ -32,10 +32,8 @@ jobs:
             -resolvePackageDependencies \
             -project TaskFlow.xcodeproj
 
-      - name: Build
-        run: |
-          xcodebuild \
-            clean build \
-            -project TaskFlow.xcodeproj \
-            -scheme TaskFlow \
-            -destination "generic/platform=iOS Simulator"
+      - name: Install Gems
+        run: bundle install
+
+      - name: Fastlane Build
+        run: bundle exec fastlane ci

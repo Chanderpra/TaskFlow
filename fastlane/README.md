@@ -15,13 +15,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios build
+### ios ci
 
 ```sh
-[bundle exec] fastlane ios build
+[bundle exec] fastlane ios ci
 ```
 
-Build TaskFlow
+Build project for CI
 
 ----
 
