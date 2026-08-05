@@ -9,10 +9,10 @@ platform :ios do
     project: "TaskFlow.xcodeproj",
     scheme: "TaskFlow",
     configuration: "Release",
-    export_method: "development",
+    export_method: "app-store",
     export_options: {
       provisioningProfiles: {
-        "com.app.mpmoney" => "MPMoneyDevelopment"
+        "com.app.mpmoney" => "MPMoneyDistribution"
       }
     }
   )
