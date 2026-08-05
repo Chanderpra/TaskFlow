@@ -15,13 +15,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios ci
+### ios beta
 
 ```sh
-[bundle exec] fastlane ios ci
+[bundle exec] fastlane ios beta
 ```
 
-Build project for CI
+Build IPA
 
 ----
 

@@ -2,17 +2,20 @@ default_platform(:ios)
 
 platform :ios do
 
-  desc "Build project for CI"
+  desc "Build IPA"
 
-  lane :ci do
-    build_app(
-      project: "TaskFlow.xcodeproj",
-      scheme: "TaskFlow",
-      configuration: "Debug",
-      sdk: "iphonesimulator",
-      skip_codesigning: true,
-      skip_archive: true
-    )
-  end
+  lane :beta do
+  build_app(
+    project: "TaskFlow.xcodeproj",
+    scheme: "TaskFlow",
+    configuration: "Release",
+    export_method: "development",
+    export_options: {
+      provisioningProfiles: {
+        "com.app.mpmoney" => "MPMoneyDevelopment"
+      }
+    }
+  )
+end
 
 end
