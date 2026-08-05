@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		501159A33023297600622259 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 501159A23023296F00622259 /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		501C23C63020C492006F0951 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		501159A23023296F00622259 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		501C23B63020C490006F0951 /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		501C23C53020C492006F0951 /* TaskFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501C23CF3020C492006F0951 /* TaskFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +85,7 @@
 		501C23AD3020C490006F0951 = {
 			isa = PBXGroup;
 			children = (
+				501159A23023296F00622259 /* .swiftlint.yml */,
 				506A54E8302217CA006D931D /* .github */,
 				501C23B83020C490006F0951 /* TaskFlow */,
 				501C23C83020C492006F0951 /* TaskFlowTests */,
@@ -219,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501159A33023297600622259 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
