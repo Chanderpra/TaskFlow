@@ -41,7 +41,7 @@ jobs:
       - name: Run Unit Tests
         run: |
             xcodebuild \
-                test \
-                -project TaskFlow.xcodeproj \
-                -scheme TaskFlow \
-                -destination "generic/platform=iOS Simulator"
+              test \
+              -project TaskFlow.xcodeproj \
+              -scheme TaskFlow \
+              -destination "generic/platform=iOS Simulator"
