@@ -38,10 +38,10 @@ jobs:
       - name: List Simulators
         run: xcrun simctl list devices
 
-      - name: Build
+      - name: Run Unit Tests
         run: |
-          xcodebuild \
-            clean build \
-            -project TaskFlow.xcodeproj \
-            -scheme TaskFlow \
-            -destination "generic/platform=iOS Simulator"
+            xcodebuild \
+                test \
+                -project TaskFlow.xcodeproj \
+                -scheme TaskFlow \
+                -destination "generic/platform=iOS Simulator"
