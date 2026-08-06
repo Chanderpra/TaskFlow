@@ -76,6 +76,14 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
         run: bundle exec fastlane beta
 
+      - name: Upload dSYM
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: TaskFlow-dSYM
+          path: TaskFlow.app.dSYM.zip
+          retention-days: 30
+          
       - name: Upload IPA
         if: always()
         uses: actions/upload-artifact@v4
